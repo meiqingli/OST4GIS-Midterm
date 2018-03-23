@@ -82,7 +82,6 @@ $(document).ready(function() {
         layer.openPopup();});
         layer.on('mouseout', function(event){
         layer.closePopup();});
-
       },
       filter: myFilter,
     }).addTo(map);
