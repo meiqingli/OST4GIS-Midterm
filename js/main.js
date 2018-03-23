@@ -137,6 +137,10 @@ map.removeLayer(featureGroup);
        style: myStyle,
        onEachFeature: function(feature,layer){
          layer.bindPopup(feature.properties.cmp_name);
+         layer.on('mouseover', function(event){
+         layer.openPopup();});
+         layer.on('mouseout', function(event){
+         layer.closePopup();});
        },
        filter: myFilter,
      }).addTo(map);
@@ -189,6 +193,10 @@ $('#previous').click(function(){
          style: myStyle,
          onEachFeature: function(feature,layer){
            layer.bindPopup(feature.properties.cmp_name);
+           layer.on('mouseover', function(event){
+           layer.openPopup();});
+           layer.on('mouseout', function(event){
+           layer.closePopup();});
          },
          filter: myFilter,
        }).addTo(map);
@@ -212,12 +220,10 @@ $('#back').click(function(event){
         style: myStyle,
         onEachFeature: function(feature,layer){
           layer.bindPopup(feature.properties.cmp_name);
-          layer.on('mouseover', function (e) {
-            this.openPopup();
-          });
-          layer.on('mouseout', function (e) {
-            this.closePopup();
-          });
+          layer.on('mouseover', function(event){
+          layer.openPopup();});
+          layer.on('mouseout', function(event){
+          layer.closePopup();});
         },
         filter: Filter,
       }).addTo(map);
